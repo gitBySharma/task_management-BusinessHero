@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const sequelize = require("./util/database.js");
 const User = require("./models/users.js");
+const Task = require("./models/tasks.js");
 
 const userRoutes = require("./routes/user.js");
 const { FORCE } = require("sequelize/lib/index-hints");
