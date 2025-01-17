@@ -11,20 +11,23 @@ exports.authenticate = async (req, res, next) => {
             return res.status(401).send({ error: "Access denied. No token provided." });
         }
 
-        const decodedUser = jwt.verify(token, process.env.JWT_SECRET);
-        if (decodedUser) {
-            const user = await User.findByPk(decodedUser.userId);
-            if (user) {
-                req.user = user;
-                next();
+        let decodedUser;
+        try {
+            decodedUser = jwt.verify(token, process.env.JWT_SECRET);
 
-            } else {
-                res.status(401).send({ error: "User not found." });
-            }
+        } catch (error) {
+            console.log("Token error", error);
+            return res.status(401).json({ error: "Invalid token." });
+
+        }
+
+        const user = await User.findByPk(decodedUser.userId);
+        if (user) {
+            req.user = user;
+            next();
 
         } else {
-            res.status(401).json({ error: "Access denied. Invalid Token." });
-
+            res.status(401).send({ error: "User not found." });
         }
 
     } catch (error) {
