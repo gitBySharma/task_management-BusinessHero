@@ -6,6 +6,9 @@ const cors = require("cors");
 const sequelize = require("./util/database.js");
 const User = require("./models/users.js");
 
+const userRoutes = require("./routes/user.js");
+const { FORCE } = require("sequelize/lib/index-hints");
+
 
 const app = express();
 
@@ -13,6 +16,8 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
+
+app.use(userRoutes);
 
 
 sequelize.sync()
