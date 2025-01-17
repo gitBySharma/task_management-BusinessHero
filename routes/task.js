@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const userAuthentication = require("../middleware/auth.js");
-const taskController = require("../controllers/task.js");
+const userAuthentication = require("../middleware/auth.js");  //import authentication middleware
+const taskController = require("../controllers/task.js");    //import task controller
 
 
 //route for adding new tasks

@@ -1,7 +1,9 @@
 const Sequelize = require("sequelize");
 
+//import database connection
 const sequelize = require("../util/database.js");
 
+//define task model
 const Task = sequelize.define("tasks", {
     id: {
         type: Sequelize.INTEGER,

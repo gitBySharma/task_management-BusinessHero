@@ -1,7 +1,9 @@
 const Sequelize = require("sequelize");
 
+//import database connection
 const sequelize = require("../util/database.js");
 
+//define user model
 const User = sequelize.define("users", {
     id: {
         type: Sequelize.INTEGER,
