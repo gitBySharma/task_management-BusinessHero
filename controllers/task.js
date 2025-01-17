@@ -120,3 +120,31 @@ exports.updateTask = async (req, res, next) => {
         res.status(500).json({ Error: "Something went wrong", success: false });
     }
 };
+
+
+
+//controller to delete a task
+exports.deleteTask = async (req, res, next) => {
+    const t = await sequelize.transaction();
+    try {
+        const id = req.params.id;
+
+        const task = await Tasks.findOne({ where: { id: id, userId: req.user.id }, transaction: t });  //fetch the task to be deleted
+        if (task) {
+            await task.destroy();  //delete the particular task
+            await t.commit();  //commit transaction if query successful
+
+            res.status(200).json({ message: "Task deleted successfully", success: true });
+
+        } else {
+            t.rollback();  //rollback transaction if task not found
+            res.status(404).json({ message: "Task not found", success: false });
+        }
+
+    } catch (error) {
+        console.log("Task deletion error => ", error);
+        await t.rollback();
+
+        res.status(500).json({ Error: "Something went wrong" });
+    }
+};
