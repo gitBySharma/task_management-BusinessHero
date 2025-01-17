@@ -72,11 +72,7 @@ Task Management System is a web application designed to simplify the organizatio
 ```
 http://localhost:<your_exposed_port>
 ```
-### Base URL (Deployed)
 
-```
-http://localhost:<your_exposed_port>
-```
 ## Endpoints
 
 ### User Management
@@ -154,6 +150,42 @@ http://localhost:<your_exposed_port>
   ```
 - Refer to the API documentation for detailed information on request/response formats
 
+
+## Deployment Details
+The project is deployed using **AWS EC2** for the application server and **AWS RDS** for the database. Below are the details:
+
+#### AWS EC2 (Elastic Compute Cloud)
+- The application backend is hosted on an EC2 instance running Amazon Linux 2.
+- Node.js and PM2 are used to run and manage the application process.
+- NGINX is configured as a reverse proxy to serve the application.
+
+#### AWS RDS (Relational Database Service)
+- MySQL database is hosted on AWS RDS for reliable and scalable data storage.
+- Database credentials are securely managed using environment variables.
+
+## Steps for Deployment
+
+1. **Set up an EC2 Instance**:
+   - Launch an EC2 instance and SSH into the server.
+   - Install Node.js, npm, PM2, and NGINX on the instance.
+
+2. **Deploy the Application**:
+   - Clone the repository to the EC2 instance.
+   - Install dependencies using `npm install`.
+   - Set up the `.env` file with the appropriate environment variables.
+
+3. **Configure NGINX**:
+   - Set up a server block to reverse proxy requests to the Node.js application.
+   - Restart NGINX to apply the changes.
+
+4. **Set up RDS**:
+   - Create an RDS MySQL instance and configure security groups to allow access from the EC2 instance.
+   - Update the `.env` file with the RDS database connection details.
+
+5. **Start the Server**:
+   - Start the application using PM2: `pm2 start app.js`.
+
+
 ## Project Structure
 
 ```
@@ -168,6 +200,7 @@ TaskManagement-BusinessHero/
 ├── .env.example     # Example environment variables
 ├── README.md        # Project documentation
 ```
+
 
 
 
