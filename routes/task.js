@@ -11,6 +11,9 @@ router.post('/tasks/addTask', userAuthentication.authenticate, taskController.po
 //route to get all tasks of an user
 router.get('/tasks/getAllTasks', userAuthentication.authenticate, taskController.getAllTasks);
 
+//route to update task
+router.put('/tasks/updateTask/:id', userAuthentication.authenticate, taskController.updateTask);
+
 
 
 module.exports = router;

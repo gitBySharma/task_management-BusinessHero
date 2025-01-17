@@ -85,3 +85,38 @@ exports.getAllTasks = async (req, res, next) => {
         res.status(500).json({ Error: "Something went wrong", success: false });
     }
 };
+
+
+
+//controller to edit a task
+exports.updateTask = async (req, res, next) => {
+    const t = await sequelize.transaction();  //initiating a transaction
+    try {
+        const id = req.params.id;
+        const { title, description, status } = req.body;   //destructure request body
+
+        const task = await Tasks.findOne({ where: { id: id, userId: req.user.id } });   //find the required task
+        if (task) {
+            //validate task status
+            if (status !== "pending" && status !== "in-progress" && status !== "completed") {
+                t.rollback();  //rollback transaction if status invalid
+                return res.status(400).json({ message: "Invalid status, Status must be 'pending', 'in-progress' or 'completed'", success: false });
+
+            }
+            const updatedTask = await task.update({ title, description, status }, { transaction: t });  //update the task with new values
+            await t.commit();  //commit transaction if query successful
+
+            res.status(200).json({ task: updatedTask, message: "Task updated successfully", success: true });
+
+        } else {
+            await t.rollback();
+            res.status(404).json({ message: "Task not found", success: false });  //error response if no task found
+
+        }
+
+    } catch (error) {
+        console.log("Task edit error => ", error);
+        await t.rollback();
+        res.status(500).json({ Error: "Something went wrong", success: false });
+    }
+};
