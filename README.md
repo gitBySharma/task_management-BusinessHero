@@ -154,6 +154,12 @@ http://localhost:<your_exposed_port>
 ## Deployment Details
 The project is deployed using **AWS EC2** for the application server and **AWS RDS** for the database. Below are the details:
 
+### Base URL (Deployed)
+
+```
+http://3.110.209.245/
+```
+
 #### AWS EC2 (Elastic Compute Cloud)
 - The application backend is hosted on an EC2 instance running Amazon Linux 2.
 - Node.js and PM2 are used to run and manage the application process.
