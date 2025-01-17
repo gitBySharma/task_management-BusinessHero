@@ -1,7 +1,9 @@
 require("dotenv").config();
-
 const express = require("express");
 const cors = require("cors");
+
+
+const sequelize = require("./util/database.js");
 
 
 const app = express();
@@ -12,6 +14,10 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is live on port ${process.env.PORT}`);
-});
+sequelize.sync()
+    .then((result) => {
+        app.listen(process.env.PORT);
+        console.log(`Server is live on port ${process.env.PORT}`);
+    }).catch((err) => {
+        console.log("Unable to start server ", err);
+    });
