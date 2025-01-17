@@ -2,13 +2,12 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-
 const sequelize = require("./util/database.js");
 const User = require("./models/users.js");
 const Task = require("./models/tasks.js");
 
 const userRoutes = require("./routes/user.js");
-const { FORCE } = require("sequelize/lib/index-hints");
+const taskRoutes = require("./routes/task.js");
 
 
 const app = express();
@@ -19,6 +18,12 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use(userRoutes);
+app.use(taskRoutes);
+
+
+//database relations
+User.hasMany(Task);
+Task.belongsTo(User);
 
 
 sequelize.sync()
