@@ -35,3 +35,53 @@ exports.postAddTask = async (req, res, next) => {
         res.status(500).json({ Error: "Something went wrong", success: false });
     }
 };
+
+
+
+//controller to fetch all tasks => pagination & filter applied
+exports.getAllTasks = async (req, res, next) => {
+
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const offset = (page - 1) * limit;     //offset logic for pagination
+
+    //search/filter parameters
+    const { title, status } = req.query;
+
+    try {
+        let taskFilterCriteria = { userId: req.user.id };   //initialize filter criteria with userId
+
+        if (title) {
+            taskFilterCriteria.title = { [Sequelize.Op.like]: `%${title}%` };   //checks for like strings as the title
+        }
+        if (status) {
+            taskFilterCriteria.status = status;
+        }
+
+        //fetch tasks with filter and pagination
+        const { count, rows } = await Tasks.findAndCountAll({   //returns total number of rows and the row data
+            where: taskFilterCriteria,
+            limit: limit,
+            offset: offset,
+            order: [['createdAt', 'DESC']],  //orders in descending order by creation date & time
+        });
+
+        if (rows.length === 0) {   //when no task is found
+            return res.status(400).json({ Message: "No data found", success: false });
+        }
+
+        //respond with pagination details
+        res.status(200).json({
+            totalItems: count,
+            totalPages: Math.ceil(count / limit),
+            currentPage: page,
+            tasks: rows,       //list of tasks
+            message: "Tasks fetched successfully",
+            success: true
+        });
+
+    } catch (error) {
+        console.log("Task fetching error => ", error);
+        res.status(500).json({ Error: "Something went wrong", success: false });
+    }
+};
