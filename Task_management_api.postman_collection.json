@@ -1,0 +1,1198 @@
+{
+	"info": {
+		"_postman_id": "f0e647e7-7529-4d74-882e-b0e9d1060777",
+		"name": "Task_management_api",
+		"description": "This postman collection of task_management_api contains all API endpoints and example request/response .",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32981824"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Test User\",\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"abc@12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.110.209.245/user/signup",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Test User\",\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"abc@12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.110.209.245/user/signup",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:23:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"33-rDjOY8wpk6XdZK0fFBRLlMka19s\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Signed up successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"abc@12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.110.209.245/user/login",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"testuser@gmail.com\",\r\n    \"password\": \"abc@12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.110.209.245/user/login",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:24:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "207"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cf-hIlvIHNBVVB1U8tow2JDRY7pkMs\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Logged in successfully\",\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA\"\n}"
+				}
+			]
+		},
+		{
+			"name": "add task 1",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test Task 1\",\r\n    \"description\": \"test description 1\",\r\n    \"status\": \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.110.209.245/tasks/addTask",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"addTask"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Task 1\",\r\n    \"description\": \"test description 1\",\r\n    \"status\": \"pending\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.110.209.245/tasks/addTask",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"addTask"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:26:01 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "236"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ec-IxfF3FMZ9u7XkVUyO0FDkBD3G3A\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"newTask\": {\n        \"id\": 8,\n        \"title\": \"Test Task 1\",\n        \"description\": \"test description 1\",\n        \"status\": \"pending\",\n        \"userId\": 3,\n        \"updatedAt\": \"2025-01-17T19:26:01.206Z\",\n        \"createdAt\": \"2025-01-17T19:26:01.206Z\"\n    },\n    \"message\": \"Task added successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "add task 2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test Task 2\",\r\n    \"description\": \"test description 2\",\r\n    \"status\": \"in-progress\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.110.209.245/tasks/addTask",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"addTask"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add task 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Task 2\",\r\n    \"description\": \"test description 2\",\r\n    \"status\": \"in-progress\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.110.209.245/tasks/addTask",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"addTask"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:27:47 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f0-2160SSJYp5uJCt+sIaozVH+b1uQ\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"newTask\": {\n        \"id\": 9,\n        \"title\": \"Test Task 2\",\n        \"description\": \"test description 2\",\n        \"status\": \"in-progress\",\n        \"userId\": 3,\n        \"updatedAt\": \"2025-01-17T19:27:47.953Z\",\n        \"createdAt\": \"2025-01-17T19:27:47.953Z\"\n    },\n    \"message\": \"Task added successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "add task 3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test Task 3\",\r\n    \"description\": \"test description 3\",\r\n    \"status\": \"completed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.110.209.245/tasks/addTask",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"addTask"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "add task 3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Task 3\",\r\n    \"description\": \"test description 3\",\r\n    \"status\": \"completed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.110.209.245/tasks/addTask",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"addTask"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:28:30 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "239"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ef-Cm/Py5iB51b8j0bYVwm6pFsD8lo\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"newTask\": {\n        \"id\": 10,\n        \"title\": \"Test Task 3\",\n        \"description\": \"test description 3\",\n        \"status\": \"completed\",\n        \"userId\": 3,\n        \"updatedAt\": \"2025-01-17T19:28:30.266Z\",\n        \"createdAt\": \"2025-01-17T19:28:30.266Z\"\n    },\n    \"message\": \"Task added successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "get all tasks of the logged-in user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://3.110.209.245/tasks/getAllTasks",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"getAllTasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all tasks of the logged-in user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://3.110.209.245/tasks/getAllTasks",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"getAllTasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:31:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "640"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"280-LODFtat9zihBF7z/0u5AH7ddIB0\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 3,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"tasks\": [\n        {\n            \"id\": 10,\n            \"title\": \"Test Task 3\",\n            \"description\": \"test description 3\",\n            \"status\": \"completed\",\n            \"createdAt\": \"2025-01-17T19:28:30.000Z\",\n            \"updatedAt\": \"2025-01-17T19:28:30.000Z\",\n            \"userId\": 3\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Test Task 2\",\n            \"description\": \"test description 2\",\n            \"status\": \"in-progress\",\n            \"createdAt\": \"2025-01-17T19:27:47.000Z\",\n            \"updatedAt\": \"2025-01-17T19:27:47.000Z\",\n            \"userId\": 3\n        },\n        {\n            \"id\": 8,\n            \"title\": \"Test Task 1\",\n            \"description\": \"test description 1\",\n            \"status\": \"pending\",\n            \"createdAt\": \"2025-01-17T19:26:01.000Z\",\n            \"updatedAt\": \"2025-01-17T19:26:01.000Z\",\n            \"userId\": 3\n        }\n    ],\n    \"message\": \"Tasks fetched successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "get tasks filtered by title",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://3.110.209.245/tasks/getAllTasks?title=test task 2",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"getAllTasks"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "test task 2"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get tasks filtered by title",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://3.110.209.245/tasks/getAllTasks?title=test task 2",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"getAllTasks"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "test task 2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:35:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "289"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"121-9AWfUFjJwgWM9CysqJRXjYeTyZ8\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 1,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"tasks\": [\n        {\n            \"id\": 9,\n            \"title\": \"Test Task 2\",\n            \"description\": \"test description 2\",\n            \"status\": \"in-progress\",\n            \"createdAt\": \"2025-01-17T19:27:47.000Z\",\n            \"updatedAt\": \"2025-01-17T19:27:47.000Z\",\n            \"userId\": 3\n        }\n    ],\n    \"message\": \"Tasks fetched successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "get tasks filtered by status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://3.110.209.245/tasks/getAllTasks?status=completed",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"getAllTasks"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "completed"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get tasks filtered by status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://3.110.209.245/tasks/getAllTasks?status=completed",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"getAllTasks"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "completed"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:37:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "288"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"120-ufTmDw0EqQv2nMcHaMTLv+079E4\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 1,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"tasks\": [\n        {\n            \"id\": 10,\n            \"title\": \"Test Task 3\",\n            \"description\": \"test description 3\",\n            \"status\": \"completed\",\n            \"createdAt\": \"2025-01-17T19:28:30.000Z\",\n            \"updatedAt\": \"2025-01-17T19:28:30.000Z\",\n            \"userId\": 3\n        }\n    ],\n    \"message\": \"Tasks fetched successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "update task",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Test Task 1 (updated)\",\r\n    \"description\": \"test description 1 (updated)\",\r\n    \"status\": \"in-progress\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://3.110.209.245/tasks/updateTask/8",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"updateTask",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update task",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Test Task 1 (updated)\",\r\n    \"description\": \"test description 1 (updated)\",\r\n    \"status\": \"in-progress\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://3.110.209.245/tasks/updateTask/8",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"updateTask",
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:41:55 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "259"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"103-vLMZY2sZusSIhAXiVBzBrpGRJjM\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"task\": {\n        \"id\": 8,\n        \"title\": \"Test Task 1 (updated)\",\n        \"description\": \"test description 1 (updated)\",\n        \"status\": \"in-progress\",\n        \"createdAt\": \"2025-01-17T19:26:01.000Z\",\n        \"updatedAt\": \"2025-01-17T19:41:55.781Z\",\n        \"userId\": 3\n    },\n    \"message\": \"Task updated successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "delete task",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://3.110.209.245/tasks/deleteTask/8",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"deleteTask",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete task",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://3.110.209.245/tasks/deleteTask/8",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"deleteTask",
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:44:00 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "54"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"36-3FR5nKky7zj8nh3zYl6Q5G+7h8E\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Task deleted successfully\",\n    \"success\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "get all tasks after one deletion",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://3.110.209.245/tasks/getAllTasks",
+					"protocol": "http",
+					"host": [
+						"3",
+						"110",
+						"209",
+						"245"
+					],
+					"path": [
+						"tasks",
+						"getAllTasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all tasks after one deletion",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMsIm5hbWUiOiJUZXN0IFVzZXIiLCJpYXQiOjE3MzcxNDE4NDV9.oJXMo44Sn8IBzlvk19lg-yGz50XOlgJTXUbQ9YUF5sA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://3.110.209.245/tasks/getAllTasks",
+							"protocol": "http",
+							"host": [
+								"3",
+								"110",
+								"209",
+								"245"
+							],
+							"path": [
+								"tasks",
+								"getAllTasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.26.2"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Jan 2025 19:45:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "466"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d2-KdZdeoazW1Hiz891V5uiRR2nsiM\""
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"totalItems\": 2,\n    \"totalPages\": 1,\n    \"currentPage\": 1,\n    \"tasks\": [\n        {\n            \"id\": 10,\n            \"title\": \"Test Task 3\",\n            \"description\": \"test description 3\",\n            \"status\": \"completed\",\n            \"createdAt\": \"2025-01-17T19:28:30.000Z\",\n            \"updatedAt\": \"2025-01-17T19:28:30.000Z\",\n            \"userId\": 3\n        },\n        {\n            \"id\": 9,\n            \"title\": \"Test Task 2\",\n            \"description\": \"test description 2\",\n            \"status\": \"in-progress\",\n            \"createdAt\": \"2025-01-17T19:27:47.000Z\",\n            \"updatedAt\": \"2025-01-17T19:27:47.000Z\",\n            \"userId\": 3\n        }\n    ],\n    \"message\": \"Tasks fetched successfully\",\n    \"success\": true\n}"
+				}
+			]
+		}
+	]
+}
